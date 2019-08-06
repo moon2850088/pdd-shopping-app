@@ -8,7 +8,6 @@ import { TopMenu, ImageSlider, ImageSliderComponent } from './component';
 })
 
 export class AppComponent {
-  @ViewChild(ImageSliderComponent) imgSlider;
   topMenus: TopMenu[] = [
     {
       title: '热门',
@@ -112,13 +111,8 @@ export class AppComponent {
     }
 
   ];
+  username = '';
   handleTabSelected(topMenu: TopMenu) {
     console.log(topMenu); 
-  }
-
-  ngAfterViewInit(): void {
-    //Called after ngAfterContentInit when the component's view has been initialized. Applies to components only.
-    //Add 'implements AfterViewInit' to the class.
-    console.log(this.imgSlider);
   }
 }
