@@ -6,4 +6,5 @@
 <span>hello  {{ username }}</span> -->
 
 <input type="text" [value]="username" (input)="username = $event.target.value"/> 
-<span>hello  {{ username }}</span>
+<p (click)="handleClick()">你好 {{ username }}!</p>
+{{ result }}
