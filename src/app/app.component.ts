@@ -111,7 +111,6 @@ export class AppComponent {
     }
 
   ];
-  username = '';
   handleTabSelected(topMenu: TopMenu) {
     console.log(topMenu); 
   }

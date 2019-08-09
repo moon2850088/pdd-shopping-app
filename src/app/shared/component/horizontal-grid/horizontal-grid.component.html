@@ -1,10 +1,5 @@
-<!-- <input type="text" [value]="username" (input)="username =  $event.target.value"/> 
-<span>hello  {{ username }}</span> -->
-
-<!-- <input type="text" 
-[(ngModel)]="username"/> 
-<span>hello  {{ username }}</span> -->
-
-<input type="text" [value]="username" (input)="username = $event.target.value"/> 
-<p (click)="handleClick()">你好 {{ username }}!</p>
-{{ result }}
+<!-- 指令所在的元素叫宿主 -->
+<div appGridItem *ngFor="let item of channels">
+    <img [src]="item.icon" alt="" [appGridItemImage]="'2rem'"/>
+    <span appGridItemTitle="1rem" class="title"> {{ item.title }}</span>
+</div>
