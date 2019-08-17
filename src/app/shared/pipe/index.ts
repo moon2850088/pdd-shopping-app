@@ -1,0 +1,1 @@
+export * from './aog-pipe';

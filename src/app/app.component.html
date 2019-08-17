@@ -1,10 +1,2 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<app-scrollable-tab [menus]="topMenus" 
-                    [backgroundColor] = "'red'"
-                    titleColor="#fff"
-                    titleActiveColor="yellow"
-                    indicatorColor="yellow" 
-                    (tabSelected)= "handleTabSelected($event)"
-                    ></app-scrollable-tab> 
-<app-image-slider [sliders]="imageSliders"></app-image-slider>
-<app-horizontal-grid></app-horizontal-grid>
+<router-outlet></router-outlet>
