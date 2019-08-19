@@ -1,5 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Injectable, Injector } from '@angular/core';
 
+@Injectable()
+class Product {
+  constructor(private name: string){
+
+  }
+}
+
+@Injectable()
+class PurchaseOrder {
+  private amount: number;
+  constructor(private product: Product) {
+  }
+}
 @Component({
   selector: 'app-home-grand',
   templateUrl: './home-grand.component.html',
@@ -11,6 +24,7 @@ export class HomeGrandComponent implements OnInit {
 
   ngOnInit() {
     this.date = this.minusDays(new Date(), 2);
+    
   }
 
   minusDays(date: Date, days: number){
