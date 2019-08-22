@@ -1,4 +1,4 @@
-<app-scrollable-tab [menus]="topMenus" 
+<app-scrollable-tab [menus]="topMenus$ | async" 
                     [backgroundColor] = "'#fff'"
                     titleColor="#3f3f3f"
                     titleActiveColor="red"

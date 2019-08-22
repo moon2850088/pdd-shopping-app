@@ -1,28 +1,33 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { ImageSlider, Channel } from 'src/app/shared/component';
 import { ActivatedRoute } from '@angular/router';
 import { HomeService } from '../../services';
+import { ChangeDetectionStrategy } from '@angular/core';
+import { filter, map, tap } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-home-detail',
   templateUrl: './home-detail.component.html',
-  styleUrls: ['./home-detail.component.css']
+  styleUrls: ['./home-detail.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HomeDetailComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute, private service: HomeService) { }
+  constructor(private route: ActivatedRoute, private service: HomeService, private cd: ChangeDetectorRef) { }
 
-  selectedTabLink;
+  selectedTabLink$: Observable<string>;
 
-  imageSliders: ImageSlider[] = [];
-  channels: Channel[] = [];
+  imageSliders$: Observable<ImageSlider[]>;
+  channels$: Observable<Channel[]>
   ngOnInit() {
-    this.route.paramMap.subscribe(params => {
-      this.selectedTabLink = params.get('tabLink');
-    })
+    this.selectedTabLink$ = this.route.paramMap.pipe(
+        filter( params => params.has('tabLink')),
+        map(params => params.get('tabLink'))
+      );
     
-      this.imageSliders = this.service.getBaaners();
-      this.channels = this.service.getChannels();
+      this.imageSliders$ = this.service.getBanners();
+      this.channels$ = this.service.getChannels();
   }
 
 }
