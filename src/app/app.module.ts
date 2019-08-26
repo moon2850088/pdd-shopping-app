@@ -8,6 +8,10 @@ import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
 import { AppRoutingModule } from './app-routing.module';
 import { HomeModule, ParamInterceptor, NotificationInterceptor } from './home';
+import { RecommandModule } from './recommand/recommand.module';
+import { MyModule } from './my/my.module';
+import { CategoryModule } from './category/category.module';
+import { ChatModule } from './chat/chat.module';
 
 @NgModule({
   declarations: [
@@ -20,7 +24,12 @@ import { HomeModule, ParamInterceptor, NotificationInterceptor } from './home';
     SharedModule,
     AppRoutingModule,
     HomeModule,
+    MyModule,
+    CategoryModule,
+    ChatModule,
+    RecommandModule,
     HttpClientModule,
+   
   ],
   providers: [
     {
@@ -36,4 +45,6 @@ import { HomeModule, ParamInterceptor, NotificationInterceptor } from './home';
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+  
+  }
