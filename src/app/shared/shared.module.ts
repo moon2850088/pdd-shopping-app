@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { ScrollableTabComponent, ImageSliderComponent, HorizontalGridComponent, CountDownComponent, FooterComponent } from './component';
+import { ScrollableTabComponent, ImageSliderComponent, HorizontalGridComponent, CountDownComponent, FooterComponent, VerticalGridComponent } from './component';
 import { GridItemDirective, GridItemImageDirective, GridItemTitleDirective } from './directives';
 import { AgoPipe } from './pipe';
 
@@ -13,6 +13,7 @@ import { AgoPipe } from './pipe';
     ImageSliderComponent,
     HorizontalGridComponent,
     CountDownComponent,
+    VerticalGridComponent,
     GridItemDirective,
     GridItemImageDirective,
     GridItemTitleDirective,
@@ -30,6 +31,7 @@ import { AgoPipe } from './pipe';
     ImageSliderComponent,
     HorizontalGridComponent,
     CountDownComponent,
+    VerticalGridComponent,
     GridItemDirective,
     GridItemImageDirective,
     GridItemTitleDirective,

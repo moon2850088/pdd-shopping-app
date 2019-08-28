@@ -3,9 +3,9 @@ import { ImageSlider, Channel } from 'src/app/shared/component';
 import { ActivatedRoute } from '@angular/router';
 import { HomeService } from '../../services';
 import { ChangeDetectionStrategy } from '@angular/core';
-import { filter, map, tap } from 'rxjs/operators';
+import { filter, map, tap, switchMap } from 'rxjs/operators';
 import { Observable } from 'rxjs';
-
+import { Ad, Product } from 'src/app/shared/domain';
 @Component({
   selector: 'app-home-detail',
   templateUrl: './home-detail.component.html',
@@ -19,7 +19,10 @@ export class HomeDetailComponent implements OnInit {
   selectedTabLink$: Observable<string>;
 
   imageSliders$: Observable<ImageSlider[]>;
-  channels$: Observable<Channel[]>
+  channels$: Observable<Channel[]>;
+  ad$: Observable<Ad>;
+  products$: Observable<Product[]>;
+
   ngOnInit() {
     this.selectedTabLink$ = this.route.paramMap.pipe(
         filter( params => params.has('tabLink')),
@@ -28,6 +31,13 @@ export class HomeDetailComponent implements OnInit {
     
       this.imageSliders$ = this.service.getBanners();
       this.channels$ = this.service.getChannels();
+      this.ad$ = this.selectedTabLink$.pipe(
+        switchMap(tab => this.service.getAdByTab(tab)),
+        map(ads => ads[0])
+      );
+      this.products$ = this.selectedTabLink$.pipe(
+        switchMap(tab => this.service.getProductsByTab(tab)),
+      );
   }
 
 }
