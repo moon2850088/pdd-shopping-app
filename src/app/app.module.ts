@@ -12,6 +12,8 @@ import { RecommandModule } from './recommand/recommand.module';
 import { MyModule } from './my/my.module';
 import { CategoryModule } from './category/category.module';
 import { ChatModule } from './chat/chat.module';
+import { ProductModule } from './product/product.module';
+import { DialogModule } from './dialog/dialog.module';
 
 @NgModule({
   declarations: [
@@ -28,6 +30,8 @@ import { ChatModule } from './chat/chat.module';
     CategoryModule,
     ChatModule,
     RecommandModule,
+    ProductModule,
+    DialogModule,
     HttpClientModule,
    
   ],

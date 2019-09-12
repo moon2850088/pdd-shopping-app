@@ -1,3 +1,5 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <router-outlet></router-outlet>
 <app-footer [selectedIndex]= "selectedIndex$ | async" (tabSelected)="handleTabSelected($event)"></app-footer>
+<div id="overlay" class="hidden" (click)="removeDialog()"></div>
+<div id="dialog-container" class="hidden"></div>

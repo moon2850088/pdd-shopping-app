@@ -5,3 +5,5 @@ GET {{host}}/tabs?icode={{iCode}} HTTP/1.1
 GET {{host}}/channels?icode={{iCode}} HTTP/1.1
 ###
 GET {{host}}/ads?categories_like=hot&icode={{iCode}} HTTP/1.1
+###
+GET {{host}}/productVariants?_expand=product&_embed=productVariantImages&productId=1&icode=D934225592182C89

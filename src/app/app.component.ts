@@ -35,4 +35,8 @@ export class AppComponent implements OnInit{
   getSelectedIndex(tab: string) {
     return tab === 'recommand' ? 1 : tab === 'category' ? 2 : tab === 'chat' ? 3 : tab === 'my' ? 4 : 0;
   }
+
+  removeDialog() {
+    
+  }
 }
