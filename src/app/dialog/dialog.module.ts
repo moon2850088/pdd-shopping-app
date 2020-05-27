@@ -6,6 +6,7 @@ import { DialogComponent } from './components';
   imports: [
     CommonModule
   ],
-  declarations: [DialogComponent]
+  declarations: [DialogComponent],
+  exports: [DialogComponent]
 })
 export class DialogModule { }

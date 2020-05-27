@@ -1,0 +1,58 @@
+<div class="container" *ngIf="item$ | async as item" >
+  <div class="title-bar">
+    <app-back-button [float]="false">
+
+    </app-back-button>
+    <span> 确认订单 </span>
+  </div>
+  <div class="content">
+    <div class="address-bar">
+      <img src="assets/icons/location.png" alt="" class="location">
+      <div class="name-and-mobile">
+        <span class="name">Tony</span>
+        <span class="moblie">13888888</span>
+      </div>
+      <div class="address">
+        xx silas Dr
+      </div>
+      <img src="assets/icons/navigate_next.png" alt="" class="more">
+    </div>
+    <ul>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <div class="shop">
+        <img src="assets/icons/brand.png" alt="">
+        <span>xxxxshop</span>
+      </div>
+      <div class="product-bar">
+        <img src="item.variant.productVariantImages[0].imgUrl" alt="" class="product-image">
+        <div class="product-name">{{ item.variant.product.title}}</div>
+        <div class="product-spec">{{ item.variant.name}}</div>
+        <div class="product-price">
+          <span>{{ item.variant.price | currency}} / 件</span>
+          <span class="price-condition">退货包运费</span>
+        </div>
+      </div>
+      <app-product-amount [count] = "item.count" (amountChange)="handleAmountChange($event)"></app-product-amount>
+      <app-payment></app-payment>
+    </ul>
+  </div>
+  <div class="toolbar">
+    <div class="total-price">
+      <span>实付款</span>
+      <span class="price_section">
+        {{ totalPrice$ | async | currency}}
+      </span>
+      <span class="price-condition">
+        &nbsp;免邮费
+      </span>
+    </div>
+    <div class="pay" (click)="handlePay()">
+      立即支付
+    </div>
+  </div>
+</div>

@@ -5,6 +5,7 @@ import { ScrollableTabComponent, ImageSliderComponent, HorizontalGridComponent, 
 import { GridItemDirective, GridItemImageDirective, GridItemTitleDirective, TagDirective, AvatarDirective } from './directives';
 import { AgoPipe } from './pipe';
 import { BackButtonComponent } from './component/back-button/back-button.component';
+import { DialogModule } from '../dialog/dialog.module';
 
 
 
@@ -33,6 +34,7 @@ import { BackButtonComponent } from './component/back-button/back-button.compone
   exports: [
     CommonModule,
     FormsModule,
+    DialogModule,
     ScrollableTabComponent,
     ImageSliderComponent,
     HorizontalGridComponent,
